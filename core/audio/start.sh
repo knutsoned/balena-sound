@@ -95,6 +95,4 @@ if [[ -n "$SOUND_ENABLE_SOUNDCARD_INPUT" ]]; then
   route_input_source
 fi
 
-#exec pulseaudio
-pulseaudio --daemonize
-tail -f /dev/null
+exec pulseaudio
