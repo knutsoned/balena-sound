@@ -97,3 +97,4 @@ fi
 
 #exec pulseaudio
 pulseaudio --daemonize
+tail -f /dev/null

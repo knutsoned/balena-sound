@@ -5,4 +5,3 @@ WORKDIR /usr/src
 COPY . .
 
 CMD [ "/bin/bash", "/usr/src/start.sh" ]
-ENTRYPOINT ["tail", "-f", "/dev/null"]
