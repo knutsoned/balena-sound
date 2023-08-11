@@ -42,7 +42,8 @@ function route_input_source() {
   local INPUT_DEVICE=$(arecord -l | awk '/card [0-9]:/ { print $3 }')
 
   if [[ -n "$INPUT_DEVICE" ]]; then
-    local INPUT_DEVICE_FULLNAME="alsa_input.$INPUT_DEVICE.analog-stereo"
+    # local INPUT_DEVICE_FULLNAME="alsa_input.$INPUT_DEVICE.analog-stereo"
+    local INPUT_DEVICE_FULLNAME="alsa_input.$INPUT_DEVICE.stereo-fallback"
     echo "Routing audio from '$INPUT_DEVICE_FULLNAME' into 'balena-sound.input sink'"
     echo -e "\nload-module module-loopback source=$INPUT_DEVICE_FULLNAME sink=balena-sound.input" >> "$CONFIG_FILE"
   fi
